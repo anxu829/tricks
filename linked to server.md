@@ -78,3 +78,7 @@ sudo scp instances_val2017.json xingdong@202.121.140.1:/home/xingdong
 
 scp  -rp  xingdong@202.121.140.1:/home/xingdong/instances_val2017.json  ./
 
+
+### hongpu
+ ssh -p 236675829 luntai-vim@101.132.123.47
+
