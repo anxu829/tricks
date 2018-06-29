@@ -63,3 +63,18 @@
   git branch -d xuan
 
 
+
+### 3 SCP
+
+ssh -L8899:localhost:8899 xingdong@202.121.140.1
+
+ssh -L8899:localhost:8899 fxd@10.2.31.107
+
+从 fxd 复制到 xingdong（在fxd干这个事，相当于从 本地（fxd）复制到远程（xingdong）服务器）
+
+sudo scp instances_val2017.json xingdong@202.121.140.1:/home/xingdong
+
+从 远程（xingdong ）复制到 本地（windows）
+
+scp  -rp  xingdong@202.121.140.1:/home/xingdong/instances_val2017.json  ./
+
