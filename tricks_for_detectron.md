@@ -1,7 +1,8 @@
 ## tricks for detectron
 
  - 1 about coco datasets
-   - coco structure
+ 
+ - coco structure
  
    ```
    coco
