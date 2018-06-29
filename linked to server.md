@@ -28,18 +28,23 @@
 
 ## screen tricks
 
-screen -ls  : check links
-screen -r 1598 : link to 1598 dialog
-c-a d : detach
-c-a n : next
-c-a 0-9 : conversation
-c-a c : create new conversation
+- screen -ls  : check links
+
+- screen -r 1598 : link to 1598 dialog
+
+- c-a d : detach
+
+- c-a n : next
+
+- c-a 0-9 : conversation
+
+- c-a c : create new conversation
 
 
 
-other tricks:
+## other tricks:
 
-1 docker tricks
+### 1 docker tricks
 
   sudo docker stop detectron
   
@@ -49,7 +54,7 @@ other tricks:
 
 
 
-2 git tricks 
+### 2 git tricks 
   
   git checkout -b xuan
   
