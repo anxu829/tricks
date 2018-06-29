@@ -63,6 +63,10 @@
   git branch -d xuan
 
 
+  git branch -r : check remote 
+  
+  sudo git checkout -b structure_data origin/structure_data
+
 
 ### 3 SCP
 
