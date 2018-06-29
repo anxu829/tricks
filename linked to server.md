@@ -8,9 +8,13 @@
 ### start your docker container
   #### 注意到我这里把docker的8888端口映射到了fxd的8899端口
   cd /data2/xuan
+  
   sudo docker images
+  
   sudo stop caffe2_jupyter
+  
   sudo rm caffe2_jupyter
+  
   sudo nvidia-docker run --name caffe2_jupyter -it -v /data2/xuan:/xuan -p 8899:8888 caffe2/caffe2:snapshot-py2-cuda9.0-cudnn7-ubuntu16.04 sh  -c "cd / && jupyter notebook --no-browser --ip 0.0.0.0 --allow-root"
 
 
@@ -38,13 +42,19 @@ other tricks:
 1 docker tricks
 
   sudo docker stop detectron
+  
   sudo docker rm detectron
+  
   sudo nvidia-docker run  --name detectron -it -p 8899:8888 -v /study/detectron/Detectron/tools/infer_simple.py:/detectron/tools/infer_simple.py   -v /study/detectron:/detectron_data  detectron:c2-cuda9-cudnn7   /bin/bash   -c "source ~/.bashrc && source /etc/profile && cd / && jupyter notebook --no-browser --ip 0.0.0.0 --allow-root --port 8888"
 
 
 
 2 git tricks 
+  
   git checkout -b xuan
+  
   git checkout master
+  
   git branch -d xuan
+
 
