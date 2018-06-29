@@ -20,3 +20,31 @@
   ssh -L8899:localhost:8899 xingdong@202.121.140.1 / cNNOV136
   ### 在上条之后，进入到xingdong，和 fxd的 8899 对应起来
   ssh -L8899:localhost:8899 fxd@10.2.31.107  /Sufe3.1415
+
+
+## screen tricks
+
+screen -ls  : check links
+screen -r 1598 : link to 1598 dialog
+c-a d : detach
+c-a n : next
+c-a 0-9 : conversation
+c-a c : create new conversation
+
+
+
+other tricks:
+
+1 docker tricks
+
+  sudo docker stop detectron
+  sudo docker rm detectron
+  sudo nvidia-docker run  --name detectron -it -p 8899:8888 -v /study/detectron/Detectron/tools/infer_simple.py:/detectron/tools/infer_simple.py   -v /study/detectron:/detectron_data  detectron:c2-cuda9-cudnn7   /bin/bash   -c "source ~/.bashrc && source /etc/profile && cd / && jupyter notebook --no-browser --ip 0.0.0.0 --allow-root --port 8888"
+
+
+
+2 git tricks 
+  git checkout -b xuan
+  git checkout master
+  git branch -d xuan
+
