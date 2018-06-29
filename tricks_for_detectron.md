@@ -3,27 +3,27 @@
  - 1 about coco datasets
    - coco structure
  
-```
-coco
-|_ coco_train2014
-|  |_ <im-1-name>.jpg
-|  |_ ...
-|  |_ <im-N-name>.jpg
-|_ coco_val2014
-|_ ...
-|_ annotations
-   |_ instances_train2014.json
+   ```
+   coco
+   |_ coco_train2014
+   |  |_ <im-1-name>.jpg
+   |  |_ ...
+   |  |_ <im-N-name>.jpg
+   |_ coco_val2014
    |_ ...
-```
+   |_ annotations
+      |_ instances_train2014.json
+      |_ ...
+   ```
 
- - linked your data to datasets
+  - linked your data to datasets
 
-```
-mkdir -p $DETECTRON/detectron/datasets/data/coco
-ln -s /path/to/coco_train2014 $DETECTRON/detectron/datasets/data/coco/
-ln -s /path/to/coco_val2014 $DETECTRON/detectron/datasets/data/coco/
-ln -s /path/to/json/annotations $DETECTRON/detectron/datasets/data/coco/annotations
-```
+  ```
+  mkdir -p $DETECTRON/detectron/datasets/data/coco
+  ln -s /path/to/coco_train2014 $DETECTRON/detectron/datasets/data/coco/
+  ln -s /path/to/coco_val2014 $DETECTRON/detectron/datasets/data/coco/
+  ln -s /path/to/json/annotations $DETECTRON/detectron/datasets/data/coco/annotations
+  ```
 
 
  - change the config file
@@ -48,7 +48,7 @@ ln -s /path/to/json/annotations $DETECTRON/detectron/datasets/data/coco/annotati
  
  ```
   
- - change your yaml file
+  - change your yaml file
 ```
  TRAIN:
   WEIGHTS: pretrained_models/ImageNetPretrained/MSRA/R-50.pkl
