@@ -1,19 +1,23 @@
 ## tricks for detectron
 
- - 1 about coco datasets
+ - 1 about datasets
  
- - coco structure
  
+ 
+ 
+ - data structure
+ 
+  - data is at /data2/xuan/data
    ```
-   coco
-   |_ coco_train2014
+   data
+   |_ train2017
    |  |_ <im-1-name>.jpg
    |  |_ ...
    |  |_ <im-N-name>.jpg
-   |_ coco_val2014
+   |_ val2017
    |_ ...
    |_ annotations
-      |_ instances_train2014.json
+      |_ instances_train2017.json
       |_ ...
    ```
 
