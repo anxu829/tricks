@@ -44,9 +44,13 @@ RUN pip install jupyter -U && pip install jupyterlab
 sudo docker stop detectron_tutorial                                                                                                                                                                            
 sudo docker rm detectron_tutorial
 
-sudo nvidia-docker run --name detectron_tutorial -it  -p 8999:8899 anxu5829/detectron:c2-cuda9-cudnn7 /bin/bash -c "jupyter lab --port 8899 --ip 0.0.0.0 --allow-root"
+sudo docker stop detectron_tutorial                                  
+sudo docker rm detectron_tutorial
 
- 
+sudo nvidia-docker run --name detectron_tutorial -it \
+  -v /data2/xuan/detection:/xuan \
+  -p 8999:8899 anxu5829/detectron:c2-cuda9-cudnn7 /bin/bash -c "jupyter     lab --port 8899 --ip 0.0.0.0 --allow-root"
+
  
   ```
 ## ./start_detecton_docker.sh
