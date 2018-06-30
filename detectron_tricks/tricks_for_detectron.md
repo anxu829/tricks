@@ -1,4 +1,20 @@
 ## tricks for detectron
+ - 0 about docker start :   create soft link to folder 
+```
+sudo docker stop detectron_tutorial
+sudo docker rm detectron_tutorial
+sudo nvidia-docker run --name detectron_tutorial -it \
+-v /data2/xuan/detection:/xuan \
+-p 8999:8899 anxu5829/detectron:c2-cuda9-cudnn7 /bin/bash -c \
+    " mkdir -p /detectron/detectron/datasets/data/coco && \
+     ln -s /xuan/train2017/coco_train2014 /detectron/detectron/datasets/data/coco/ && \
+      ln -s /xuan/val2017/coco_val2014 /detectron/detectron/datasets/data/coco/ && \
+      ln -s /xuan/data/annotations /detectron/detectron/datasets/data/coco/annotations && \
+     cd / && \
+     jupyter lab --port 8899 --ip 0.0.0.0 --allow-root"
+```
+
+
 
  - 1 about datasets
  
