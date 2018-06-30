@@ -13,6 +13,12 @@ pd.set_option('display.width', 1000)
  df.drop(['B', 'C'], axis=1)
 ```
 
+### 关于NaN
+
+pandas 中df 显示为NaN的位置，内部的值都是np.nan
+float(np.nan) 返回nan （type(nan)为float）
+
+
 
 ### 数据读取：
 	- datatime 处理方法
