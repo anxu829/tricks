@@ -8,6 +8,12 @@ pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 ```
 
+### drop cols
+```
+ df.drop(['B', 'C'], axis=1)
+```
+
+
 ### 数据读取：
 	- datatime 处理方法
 	- useCols 节省内存
