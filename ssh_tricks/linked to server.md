@@ -26,6 +26,22 @@
   ssh -L8899:localhost:8899 fxd@10.2.31.107  /Sufe3.1415
 
 
+# jupyter lab version
+
+## ssh -L8899:localhost:8899 xingdong@202.121.140.1
+## ssh -L8899:localhost:8899 fxd@10.2.31.107
+## cd /data2/xuan/detection/tutorial
+## touch start_detecton_docker.sh
+## sudo chomod 777 start_detecton_docker.sh
+## vim start_detecton_docker.sh
+  ```
+  sudo docker stop detectron_tutorial
+  sudo docker rm detectron_tutorial
+  sudo nvidia-docker run -it anxu5829/detectron:c2-cuda9-cudnn7 /bin/bash -c "jupyter lab --port 8899 --ip 0.0.0.0 --allow-root"
+  ```
+## ./start_detecton_docker.sh
+
+
 ## screen tricks
 
 - screen -ls  : check links
@@ -39,6 +55,9 @@
 - c-a 0-9 : conversation
 
 - c-a c : create new conversation
+
+
+
 
 
 
