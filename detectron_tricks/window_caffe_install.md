@@ -4,7 +4,7 @@
   - ## download cudnn and upzip them to your cuda folder
   - ## download caffe-windows (i will upload to this project)
   
-# uozip caffe-windows:
+# unzip caffe-windows:
   - ## modify /windows/CommonSettings.props
   
     - ### attention : cudnn path is the path of your cudnn folder contains floder of 'cuda'
