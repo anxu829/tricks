@@ -1,4 +1,6 @@
-  # download requirements
+
+
+# download requirements
   - ## install vc2013 ( offline - version )
   - ## for gtx10+ , you need download cuda9.0 (cuda8.0 could not support gtx10+)
   - ## download cudnn and upzip them to your cuda folder
@@ -58,3 +60,12 @@
          ```
           点击项目，右击选择属性->配置属性->c/c++->常规，将“警告视为错误”的选项改为“否”。就可以！
          ```
+# after build
+  ## use pycaffe
+  ## all the file you build is under :
+    ### ``` C:\Users\an\Documents\tools\caffe-master\caffe-master\Build\x64\Release ```
+  ## find folder 'caffe' in Release/pycaffe to your python's site-package folder
+  ## pip install protobuf
+  ## import caffe
+  
+  https://blog.csdn.net/fuwenyan/article/details/70889279?utm_source=itdadao&utm_medium=referral
