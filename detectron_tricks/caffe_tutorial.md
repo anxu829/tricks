@@ -1,18 +1,20 @@
-Caffe的模型结构
-  一个深度学习模型是由三个部分组成:
-    网络结构配置文件
-      训练网络结构train.prototxt、测试网络结构test.prototxt及实施网络结构deploy.prototxt
-    网络权重参数文件：该文件用于保存网络各层的权重值，是以*.caffemodel格式存储的文件
-    训练超参数文件: 比如solver.prototxt
-    
-    ```
-    # train your model
-    solver = caffe.SGDSolver('solver.prototxt') # 调用训练器
-    solver.solve() # 直接训练模型
-    ```
-    
-    通过网络权重参数及网络结构配置文件调用网络：
-    net = caffe.Net('deploy.prototxt', '*.caffemodel',caffe.TEST)
-    
-    
-    通过训练超参数文件及网络权重参数文件进行权重预设的网络训练
+caffe tutirial
+
+# usage of caffe model (one week ) :
+  - ### use caffe .model file to build an caffe net and infer 
+  - ### change caffe .prototxt to find the change / or error when create the net
+  - ### use it to infer 
+  - ### chech the method to use the model in cpu mode
+  
+  
+# check the tutorial file （one week）
+  - ### checking the way to train mnist model
+  - ### checking the functions of file solver , prototxt , train net
+  - ### checking mtcnn caffe model  , to find the way to build your own model
+
+# check some advanced usage of caffe (one week )
+  - ### clone refinedDet or faster rcnn to check how to build those user-defined layer into your caffe
+  - ### check the way to train your caffe model using their layer
+  
+  
+  
