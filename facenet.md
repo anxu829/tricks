@@ -1,7 +1,7 @@
 1 compare.py
 
 # about  load_and_align_data()
-
+```
 - load_and_align_data()
   - 总的来说，会对于图像中最像人脸的部分进行提取
   - 参数
@@ -52,3 +52,42 @@
     prewhitened = facenet.prewhiten(aligned)
 
  
+```
+
+# about compare
+
+## step 1 ： create graph and sess：
+
+```
+    with tf.Graph().as_default():
+
+        with tf.Session() as sess:
+
+```
+
+## step 2 : 
+
+```
+    # load_model
+    facenet.load_model(args.model)
+      - 可以恢复graph 和 session 信息
+    # Get input and output tensors
+    images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
+    embeddings = tf.get_default_graph().get_tensor_by_name("embeddings:0")
+    phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")
+
+    # Run forward pass to calculate embeddings
+    feed_dict = { images_placeholder: images, phase_train_placeholder:False }
+    
+    # tf 的逻辑 : 只要你不去run optimizer，他就指哪跑到哪
+    emb = sess.run(embeddings, feed_dict=feed_dict)
+    
+    # emb 是一个n*512维的向量
+    
+    # 之后对每个图片做欧氏距离即可
+    
+    
+
+
+```
+
