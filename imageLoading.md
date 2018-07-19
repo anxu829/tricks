@@ -1,0 +1,2 @@
+import PIL
+PIL.ImageFile.LOAD_TRUNCATED_IMAGES = True
