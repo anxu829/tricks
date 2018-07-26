@@ -2,8 +2,8 @@
 ## ssh 1 ：首先建立一个ssh，用于启动docker
 ### linked start
 
-  ssh xingdong@202.121.140.1 / cNNOV136
-  ssh fxd@10.2.31.107 /Sufe3.1415
+  ssh xingdong@202.121.140.1 / xxx
+  ssh fxd@10.2.31.107 /xxxx
 
 ### start your docker container
   #### 注意到我这里把docker的8888端口映射到了fxd的8899端口
