@@ -111,6 +111,7 @@ sudo scp instances_val2017.json xingdong@202.121.140.1:/home/xingdong
 scp  -rp  xingdong@202.121.140.1:/home/xingdong/instances_val2017.json  ./
 
 从 xingdong 到 fxd
+
 sudo scp -rp xingdong@202.121.140.1:/home/xingdong/geyh/label_withHead.rar /data2/xuan/detection/data/
 
 
