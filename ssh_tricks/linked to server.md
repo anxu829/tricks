@@ -21,9 +21,9 @@
 ## ssh2  ：再新建一个窗口，把8899端口映射到本地8899端口
 
   ### 首先把本地 的 8899 和 xidong 的8899对应起来
-  ssh -L8899:localhost:8899 xingdong@202.121.140.1 / cNNOV136
+  ssh -L8899:localhost:8899 xingdong@202.121.140.1 / xxxpasswordxxx
   ### 在上条之后，进入到xingdong，和 fxd的 8899 对应起来
-  ssh -L8899:localhost:8899 fxd@10.2.31.107  /Sufe3.1415
+  ssh -L8899:localhost:8899 fxd@10.2.31.107  /xxxpasswordxxx
 
 
 # jupyter lab version
