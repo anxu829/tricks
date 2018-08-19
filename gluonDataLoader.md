@@ -47,13 +47,9 @@ https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a
 
 5 关于类变量和成员变量
 ```
-
-1 python 生成器，迭代器
-```
 https://www.cnblogs.com/20150705-yilushangyouni-Jacksu/p/6238187.html
 ```
 
-```
 
 
 
