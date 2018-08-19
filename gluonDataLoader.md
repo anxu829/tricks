@@ -50,6 +50,22 @@ https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a
 https://www.cnblogs.com/20150705-yilushangyouni-Jacksu/p/6238187.html
 ```
 
+6 骚操作大全：
+1 
+```
+
+class VOCDetection(VisionDataset):
+    CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
+               'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
+               'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor')
+    @property
+    def classes(self):
+        """Category names."""
+        return type(self).CLASSES
+
+```
+
+
 
 
 
