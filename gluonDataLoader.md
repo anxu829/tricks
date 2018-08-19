@@ -1,4 +1,4 @@
-# 1 about VocDetection datasets
+# 1 about VocDetection loader
 
 ### vocDetection dataloader file path :
 
