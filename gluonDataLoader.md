@@ -125,6 +125,36 @@ train_image2, train_label2 = train_transform(train_image, train_label)
 
 ```
 
+源代码中的核心部分
+
+``` 
+ def __call__(self, src, label):
+        """Apply transform to training image/label."""
+        # resize shorter side but keep in max_size
+        h, w, _ = src.shape
+        img = timage.resize_short_within(src, self._short, self._max_size)
+        bbox = tbbox.resize(label, (w, h), (img.shape[1], img.shape[0]))
+
+        # random horizontal flip
+        h, w, _ = img.shape
+        img, flips = timage.random_flip(img, px=0.5)
+        bbox = tbbox.flip(bbox, (w, h), flip_x=flips[0])
+
+        # to tensor
+        img = mx.nd.image.to_tensor(img)
+        img = mx.nd.image.normalize(img, mean=self._mean, std=self._std)
+
+        if self._anchors is None:
+            return img, bbox.astype(img.dtype)
+
+```
+
+
+
+
+
+
+
 
 # 3 关于dataLoader
 
