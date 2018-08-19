@@ -158,7 +158,29 @@ train_image2, train_label2 = train_transform(train_image, train_label)
 
 # 3 关于dataLoader
 
+```
 
+from gluoncv.data.batchify import Tuple, Append
+from mxnet.gluon.data import DataLoader
+
+batch_size = 2  # for tutorial, we use smaller batch-size
+num_workers = 0  # you can make it larger(if your CPU has more cores) to accelerate data loading
+
+# behavior of batchify_fn: stack images, and pad labels
+batchify_fn = Tuple(Append(), Append())
+train_loader = DataLoader(train_dataset.transform(train_transform), batch_size, shuffle=True,
+                          batchify_fn=batchify_fn, last_batch='rollover', num_workers=num_workers)
+val_loader = DataLoader(val_dataset.transform(val_transform), batch_size, shuffle=False,
+                        batchify_fn=batchify_fn, last_batch='keep', num_workers=num_workers)
+
+for ib, batch in enumerate(train_loader):
+    if ib > 3:
+        break
+    print('data 0:', batch[0][0].shape, 'label 0:', batch[1][0].shape)
+    print('data 1:', batch[0][1].shape, 'label 1:', batch[1][1].shape)
+
+
+```
 
 
 
