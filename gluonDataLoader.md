@@ -187,7 +187,7 @@ for ib, batch in enumerate(train_loader):
 
 ### dataLoader 
 ```
-
+dataLoader 的核心是，我该如何为dataLoader准备数据？
 
 
 ```
