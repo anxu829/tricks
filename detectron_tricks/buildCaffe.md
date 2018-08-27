@@ -40,6 +40,6 @@
 # 2 build caffe
   ```
   1 make clean && mkdir build
-  2 cd build && cmake .. && make all && make install && make runtest
-  3 make pycaffe
+  2 cd build && cmake .. && make all && make pycaffe &&  make install && make runtest
+  
   ```
