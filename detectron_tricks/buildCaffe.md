@@ -33,11 +33,7 @@
       export CPATH="/usr/include/hdf5/serial/"
       
 
-      cd /usr/lib/x86_64-linux-gnu
-
-      \\然后根据情况执行下面两句：
-      sudo ln -s libhdf5_serial.so.10.1.0 libhdf5.so
-      sudo ln -s libhdf5_serial_hl.so.10.0.2 libhdf5_hl.so
+   
 
   ```
   
