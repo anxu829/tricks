@@ -38,6 +38,33 @@ val_dataset = VOCDetection(splits=[(2007, 'test')])
 难点
 
 ```
+transform最核心的部分：
+    def __getitem__(self, idx):
+        item = self._data[idx]
+        if isinstance(item, tuple):
+            return self._fn(*item)
+        return self._fn(item)
+        
+1 item = self._data[idx]
+    会拿到batch的每个东西 (x,y)
+    
+2 self._fn(*item)
+    然后 trans(x,y) 后还原
+
+```
+
+```
+
+
+```
+transform_first
+ def base_fn(x, *args):
+        if args:
+            return (fn(x),) + args
+        return fn(x)
+    return self.transform(base_fn, lazy)
+
+```
 dataset.transform(加入的变换是对观测的每一个做变换).transform_first(对每个batch的第一项做变换)
 
 # gluon-> data-> datasets
@@ -234,6 +261,13 @@ val_loader = DataLoader(val_dataset.transform(val_transform), batch_size, shuffl
 ```
 
 batchify
+
+```
+核心：对每一个batch做拼接
+[default_batchify_fn(i) for i in data]
+
+```
+
 ```
 def default_batchify_fn(data):
     """Collate data into batch."""
