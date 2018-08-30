@@ -1,4 +1,5 @@
 1 VOCdevkit 
+```
   对数据集合： xml 和 jpg 都在对应的文件夹，区别 train 和 test 只有靠txt
   -> VOC2007
     -> Annotations
@@ -19,7 +20,7 @@
         -> 1 trainval.txt
         -> 2 test.txt
  
- 
+```
  2 Gluoncv DataLoader
  
  1 要点：数据按照格式排放
