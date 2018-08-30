@@ -28,14 +28,23 @@
       # calculate ious between (N, 4) anchors and (M, 4) bbox ground-truths
       # ious is (N, M)
       ious = F.contrib.box_iou(all_roi, gt_box, format='corner').transpose((1, 0, 2)) # 拿到IOU : 每一个N对每一个M 
-      matches = self._matcher(ious)                                                   # self._matcher =  MaximumMatcher(pos_iou_thresh)
-                                                                                      # matchter 策略 ： CompositeMatcher、BipartiteMatcher、MaximumMatcher
-      samples = F.Custom(matches, ious, op_type='quota_sampler',
+      
+      # self._matcher =  MaximumMatcher(pos_iou_thresh)
+      # matchter 策略 ： CompositeMatcher、BipartiteMatcher、MaximumMatcher
+      matches = self._matcher(ious)                                                   
+
+      samples = F.Custom(matches, ious, op_type='quota_sampler',                      # sampler glouncv.nn.sampler.py
                          num_sample=self._num_sample,
                          pos_thresh=self._pos_iou_thresh,
                          neg_thresh_high=self._neg_iou_thresh_high,
                          neg_thresh_low=self._neg_iou_thresh_low,
                          pos_ratio=self._pos_ratio)
+                         
+            ```
+            
+            
+            
+            ```
       samples = samples.squeeze(axis=0)   # remove batch axis
       matches = matches.squeeze(axis=0)
 
@@ -123,7 +132,7 @@
     box_pred = self.box_predictor(top_feat).reshape(
         (-1, self.num_class, 4)).transpose((1, 0, 2))
 
-
+    return ids, scores, bboxes
 
 
 
