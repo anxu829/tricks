@@ -105,12 +105,12 @@ with open(dataset_file_path, 'w') as f:
 1. start docker 
 2. install requirement
 3. start HTTPSERVER
-4. load json
+4. load json: \
    python -m annotation_tools.db_dataset_utils --action load \
 --dataset ~/Downloads/annotations/person_keypoints_val2017.json \
 --normalize
 5. start annotation_tools
-6. export json
+6. export json: \
    python -m annotation_tools.db_dataset_utils --action export \
 --output ~/Downloads/annotations/updated_person_keypoints_val2017.json \
 --denormalize
