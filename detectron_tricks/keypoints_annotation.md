@@ -67,16 +67,20 @@ categories = [{
 
 import glob
 import os
+import cv2
 
 image_dir_regx = '/data/el-train/TRAIN/mxnet_yinlieClassify/anno/annoImg/*.jpg'
 images = []
 for image_path in glob.glob(image_dir_regx):
     image_file_name = os.path.basename(image_path)
+    image_height, image_width = cv2.imread(image_path, 0).shape
     image_id = os.path.splitext(image_file_name)[0]
     image_url = "http://localhost:6008/" + image_file_name
     print(image_url)
     images.append({
         "id" : image_id,
+        "height": image_height,
+        "width": image_width,
         "file_name" : image_file_name,
         "coco_url" : image_url
     })
@@ -102,4 +106,11 @@ with open(dataset_file_path, 'w') as f:
 2. install requirement
 3. start HTTPSERVER
 4. load json
+   python -m annotation_tools.db_dataset_utils --action load \
+--dataset ~/Downloads/annotations/person_keypoints_val2017.json \
+--normalize
 5. start annotation_tools
+6. export json
+   python -m annotation_tools.db_dataset_utils --action export \
+--output ~/Downloads/annotations/updated_person_keypoints_val2017.json \
+--denormalize
