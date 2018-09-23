@@ -118,4 +118,16 @@ sudo scp -rp xingdong@202.121.140.1:/home/xingdong/geyh/label_withHead.rar /data
 
 ### hongpu
  ssh -p 236675829 luntai-vim@101.132.123.47
+ 
+ 
+ 
+ 
+ 
+ ### start gluoncv
+  
+  HOME=`pwd`
+  sudo docker stop gluon_gan
+  sudo docker rm gluon_gan
+  sudo nvidia-docker run  --name gluon_gan -it -p 18899:18899 -v ${HOME}:/data  anxu829/gluoncv:withlab   /bin/bash   -c "source ~/.bashrc && source /etc/profile && cd / && jupyter notebook --no-browser --ip 0.0.0.0 --allow-root --port 18899"
+ 
 
