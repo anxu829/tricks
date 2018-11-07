@@ -1,4 +1,7 @@
 
+## 启动nvidia 指定显卡的方法
+run -e CUDA_VISIBLE_DEVICES = 1
+
 ## ssh 1 ：首先建立一个ssh，用于启动docker
 ### linked start
 
